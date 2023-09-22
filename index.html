@@ -7,6 +7,35 @@
     <link rel="stylesheet" href="styles.css">
     <title>Document</title>
     <style>
+         /* Estilo para el contenedor del texto animado */
+        .texto-animado-container {
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Estilo para el texto animado */
+        .texto-animado {
+            display: inline-block;
+            opacity: 0; /* Inicialmente, el texto está invisible */
+            transform: translateX(-100%); /* Empieza fuera de la pantalla a la izquierda */
+            animation: aparecer 2s ease-in-out forwards; /* Animación de entrada */
+        }
+
+        /* Animación de entrada */
+        @keyframes aparecer {
+            0% {
+                transform: translateX(-100%); /* Inicialmente, fuera de la pantalla a la izquierda */
+                opacity: 0; /* Inicialmente, invisible */
+            }
+            50% {
+                opacity: 1; /* A la mitad de la animación, el texto es completamente visible */
+            }
+            100% {
+                transform: translateX(0); /* Al final de la animación, el texto está en su posición final */
+                opacity: 1; /* Al final de la animación, el texto es completamente visible */
+            }
+        }
         *,
 *::after,
 *::before {
@@ -1331,6 +1360,12 @@ body {
     </style>
 </head>
 <body>
+    <div class="texto-animado-container">
+        <!-- Texto animado 1 -->
+        <h1 class="texto-animado">¡Nucita, estas 'rosas' virtuales van para ti en este 21 de septiembre!</h1>
+        <!-- Texto animado 2 -->
+        <p class="texto-animado">¡Espero que hayas pasado un día genial hoy!</p>
+    </div>
 <body class="not-loaded">
 
     <div class="flor-container">
